@@ -26,29 +26,34 @@ After determining which target applies to a given row, all other target columns 
 
 # Steps Performed by the Code
 **1. Data Loading:**
-Reads the dataset from the specified CSV file.
+-Reads the dataset from the specified CSV file.
+
 **2. Preprocessing:**
-Fills missing numeric values with the mean.
-Selects only numeric columns for modeling.
-If any columns are objects and can be numerically coerced, they are converted.
-Optional: Plots histograms and a correlation heatmap for exploratory data analysis.
+-Fills missing numeric values with the mean.
+-Selects only numeric columns for modeling.
+-If any columns are objects and can be numerically coerced, they are converted.
+-Optional: Plots histograms and a correlation heatmap for exploratory data analysis.
+
 **3. Target Selection Logic:**
-Assigns a pseudo-roll number based on the DataFrame index.
-Uses the last digit of this pseudo-roll number to decide which TargetN column to use.
-Creates a single Target column and drops the other target columns.
+-Assigns a pseudo-roll number based on the DataFrame index.
+-Uses the last digit of this pseudo-roll number to decide which TargetN column to use.
+-Creates a single Target column and drops the other target columns.
+
 **4. Modeling with PyCaret:**
-Sets up a regression environment with PyCaret.
-Compares multiple regression models (e.g., Linear Regression, Random Forest, XGBoost, etc.) based on their R² scores.
-Selects the top-performing models and displays their performance metrics.
+-Sets up a regression environment with PyCaret.
+-Compares multiple regression models (e.g., Linear Regression, Random Forest, XGBoost, etc.) based on their R² scores.
+-Selects the top-performing models and displays their performance metrics.
+
 **5. 70/30 Train-Test Split:**
-Splits the dataset into 70% training and 30% testing using train_test_split.
-Finalizes the best model from the comparison step.
+-Splits the dataset into 70% training and 30% testing using train_test_split.
+-Finalizes the best model from the comparison step.
+
 **6. Evaluation on the Test Set:**
-Uses the finalized model to make predictions on the test data.
-Prints out performance metrics like R², RMSE, and MAE to evaluate model performance.
+-Uses the finalized model to make predictions on the test data.
+-Prints out performance metrics like R², RMSE, and MAE to evaluate model performance.
 
 # Results and Interpretation
-1. The code outputs a comparison table of different models evaluated using PyCaret.
-2. A bar plot shows Model vs. R² for quick visual comparison.
-3. After finalizing the best model, the code predicts on the test set and provides metrics to indicate how well the model generalizes to unseen data.
+-The code outputs a comparison table of different models evaluated using PyCaret.
+-A bar plot shows Model vs. R² for quick visual comparison.
+-After finalizing the best model, the code predicts on the test set and provides metrics to indicate how well the model generalizes to unseen data.
 
