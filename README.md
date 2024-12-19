@@ -62,9 +62,13 @@ After determining which target applies to a given row, all other target columns 
 -Prints out performance metrics like R², RMSE, and MAE to evaluate model performance.
 
 # Results and Interpretation
--The code outputs a comparison table of different models evaluated using PyCaret.
+1. Best Model: Bayesian Ridge Regression achieved the best performance with:
+   
+   R²: 0.251 – Explains 25% of the variance in the target variable.
+   
+   RMSE: 0.0582 and MAE: 0.0487 – Indicating close predictions to actual values.
+   
+2. Model Comparison: Bayesian Ridge outperformed other models, while tree-based and ensemble methods showed suboptimal results due to possible non-linearity or feature issues.
 
--A bar plot shows Model vs. R² for quick visual comparison.
-
--After finalizing the best model, the code predicts on the test set and provides metrics to indicate how well the model generalizes to unseen data.
+3. Feature Correlation: High correlations among features suggest redundancy, and the target variable showed weak correlations, contributing to low R².
 
